@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PROJECT BLACKOUT</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrix"></canvas>
+
+<!-- EFFECTS -->
+<div id="redFlash"></div>
+<div id="flashlight"></div>
+<div id="crack">💥</div>
+
+<!-- CCTV -->
+<div id="camera">
+  📹
+  <span id="rec"></span>
+</div>
+
+<!-- LASERS -->
+<div id="laser1" class="laser"></div>
+<div id="laser2" class="laser"></div>
+
+<!-- INVENTORY -->
+<div id="inventory">
+🗂 Inventory:
+<span id="items">Empty</span>
+</div>
+
+<!-- HACKER TERMINAL -->
+<div id="terminal">
+
+<h2>HACKER TERMINAL</h2>
+
+<div id="output"></div>
+
+<input
+id="cmd"
+placeholder="type command">
+
+<div class="terminalButtons">
+
+<button onclick="runCommand()">
+EXECUTE
+</button>
+
+<button onclick="closeTerminal()">
+CLOSE
+</button>
+
+</div>
+
+</div>
+
+<!-- BLACKOUT OS -->
+<div id="desktop">
+
+<div
+class="icon"
+onclick="openFolder('docs')">
+
+📁
+<p>Documents</p>
+
+</div>
+
+<div
+class="icon"
+onclick="openFolder('bin')">
+
+🗑️
+<p>Recycle Bin</p>
+
+</div>
+
+<div
+class="icon"
+onclick="openFolder('notes')">
+
+📝
+<p>Notepad</p>
+
+</div>
+
+<div
+class="icon"
+onclick="openFolder('cams')">
+
+📹
+<p>CCTV</p>
+
+</div>
+
+</div>
+
+<!-- POPUP WINDOW -->
+<div id="window">
+
+<div id="titleBar">
+
+<span id="windowTitle">
+Folder
+</span>
+
+<button onclick="closeWindow()">
+✖
+</button>
+
+</div>
+
+<div id="windowContent"></div>
+
+</div>
+
+<!-- LEVEL 1 -->
+<div
+class="container"
+id="level1">
+
+<h1>PROJECT BLACKOUT</h1>
+
+<p>
+Year 2045.
+You are trapped inside a secret bunker.
+Enter the emergency code.
+</p>
+
+<div
+class="timer"
+id="timer">
+
+Time: 00:00
+
+</div>
+
+<input
+id="code"
+type="password"
+maxlength="4"
+placeholder="****">
+
+<button onclick="checkCode()">
+UNLOCK
+</button>
+
+<p id="message"></p>
+
+<p class="clue">
+
+Clue:
+The answer is the number of sides on two squares.
+
+</p>
+
+</div>
+
+<!-- LEVEL 2 -->
+<div
+class="container hidden"
+id="level2">
+
+<h1>LEVEL 2</h1>
+
+<p>
+Decode this binary message.
+</p>
+
+<div class="binary">
+
+01001000 01001001
+
+</div>
+
+<input
+id="binaryAnswer"
+placeholder="Your answer">
+
+<button onclick="checkBinary()">
+DECODE
+</button>
+
+<p id="binaryMessage"></p>
+
+</div>
+
+<!-- LEVEL 3 -->
+<div
+class="container hidden"
+id="level3">
+
+<h1>LEVEL 3</h1>
+
+<p>
+Choose the correct control.
+</p>
+
+<div class="buttons">
+
+<button onclick="wrongButton()">
+⚡ POWER
+</button>
+
+<button onclick="wrongButton()">
+🔒 LOCK
+</button>
+
+<button onclick="escapeButton()">
+🚀 ESCAPE
+</button>
+
+</div>
+
+<p id="countdown"></p>
+
+</div>
+
+<!-- VAULT -->
+<div
+id="vault"
+class="hidden">
+
+<div class="door left"></div>
+<div class="door right"></div>
+
+<div id="light">
+
+<h1>MISSION COMPLETE</h1>
+
+<p id="finalTime"></p>
+
+<button onclick="location.reload()">
+PLAY AGAIN
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
